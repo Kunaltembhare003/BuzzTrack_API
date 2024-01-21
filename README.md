@@ -79,7 +79,7 @@ To run the unit test, excute the following command:
 
 
 # API documentation
-For detailed API documentation, refer to the API Documentation.
+For detailed API documentation, refer to the [API Documentation](https://github.com/Kunaltembhare003/BuzzTrack_API/blob/main/API_Documentation.md).
 
 
 
