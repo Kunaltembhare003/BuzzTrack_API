@@ -29,12 +29,6 @@ def fizzbuzz():
     limit = data['limit']
     str1 = data['str1']
     str2 = data['str2']
-    '''data = request.get_json()
-    int1 = data.get('int1', 3)
-    int2 = data.get('int2', 5)
-    limit = data.get('limit', 100)
-    str1 = data.get('str1', 'fizz')
-    str2 = data.get('str2', 'buzz')'''
     result = [
         str1 + str2 if i % int1 == 0 and i % int2 == 0 else
         str1 if i % int1 == 0 else

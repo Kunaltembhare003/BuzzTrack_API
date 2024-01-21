@@ -1,6 +1,13 @@
 # FizzBuzz API
 
-This is a simple Flask API that implements the FizzBuzz algorithm with customizable parameters. It also includes basic input validation using Marshmallow.
+This is a simple Flask-based REST API that provides a FizzBuzz endpoint and a statistics endpoint. The FizzBuzz API generates FizzBuzz sequences based on user-defined parameters and keeps track of usage statistics.
+
+## Tabel of Contents
+- [Getting Started](#Getting-Started)
+- [Third-party Libraries](#Third-Party-Libraries)
+- [Endpoints](#Endpoints)
+- [Running the Server](#Running-the-Server)
+- [Testing](#Testing)
 
 ## Getting Started
 
@@ -22,18 +29,25 @@ To run the FizzBuzz API locally, follow these steps:
 
 The API will be accessible at 'http://localhost:5000'.
 
+## Third-party Libraries
+This project utilizes the following third-party libraries:
+
+* Flask: Web framework for building the REST API.
+
+* Marshmallow: Used for object serialization and validation of input data.
+
+* Flask-Limiter: Implements rate limiting to prevent abuse and control the number of requests.
+
+* Requests: Simplifies making HTTP requests in the unit tests.
+
+
+
 ## Endpoints
 
 ### FizzBuzz
 
 * Endpoint: '/fizzbuzz'
 * Method: 'GET'
-* Parameters:
-    * 'int1' (integer, required): First divisor.
-    * 'int2' (integer, required): Second divisor.
-    * 'limit' (integer, required): Upper limit for FizzBuzz.
-    * 'str1' (string, required): String to be displayed for numbers divisible by int1.
-    * 'str2' (string, required): String to be displayed for numbers divisible by int2.
 
 ### Exaple Request
     ```bash
@@ -52,20 +66,20 @@ The API will be accessible at 'http://localhost:5000'.
     ```bash
     curl -X GET "http://localhost:5000/statistics"
 
-### Example Response
-    ```json
-    {"most_used_request": {
-    "int1": 3,
-    "int2": 5,
-    "limit": 15,
-    "str1": "fizz",
-    "str2": "buzz"},
-    "hits": 1}
+## Running the server
+    ```bash
+    python app.py
 
-## Input validation
-Input parameters for the FizzBuzz endpoint are validated using Marshmallow. If the input is invalid, the API will return an error message specifying the validation failure.
+By default, the server runs in the debug mode.
+
+## Testing Server
+To run the unit test, excute the following command:
+    ```bash
+    python testunit.py
 
 
+# API documentation
+For detailed API documentation, refer to the API Documentation.
 
 
 
