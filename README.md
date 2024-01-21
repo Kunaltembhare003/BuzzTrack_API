@@ -50,8 +50,9 @@ This project utilizes the following third-party libraries:
 * Method: 'GET'
 
 ### Exaple Request
-    ```bash
-    curl -X GET "http://localhost:5000/fizzbuzz?int1=3&int2=5&limit=15&str1=fizz&str2=buzz"
+      ```bash
+      curl -X GET "http://localhost:5000/fizzbuzz?int1=3&int2=5&limit=15&str1=fizz&str2=buzz"
+
 
 Let's break down the components of the cURL command:
 * -X GET: Specifies the HTTP method to be used, in this case, it's a GET request. 
@@ -65,8 +66,8 @@ Let's break down the components of the cURL command:
 So, when you run this cURL command, it sends a GET request to the specified URL with the provided query parameters, and the server at "http://localhost:5000/fizzbuzz" is expected to respond with the corresponding FizzBuzz sequence based on the given parameters.
 
 ### Example Response
-    ```json
-    ["1","2","fizz","4","buzz","fizz","7","8","fizz","buzz","11","fizz","13","14","fizzbuzz"]
+      ```json
+      ["1","2","fizz","4","buzz","fizz","7","8","fizz","buzz","11","fizz","13","14","fizzbuzz"]
 
 ### Statistic
 
@@ -74,15 +75,14 @@ So, when you run this cURL command, it sends a GET request to the specified URL 
 * Method: 'GET'
 
 ### Example Request
-    ```bash
-    curl -X GET "http://localhost:5000/statistics"
+      ```bash
+      curl -X GET "http://localhost:5000/statistics"
 
 
 ## Testing Server
 To run the unit test, excute the following command:
-   ```bash
-   python test_fizzbuzz.py
-
+      ```bash
+      python test_fizzbuzz.py
 
 # API documentation
 For detailed API documentation, refer to the [API Documentation](https://github.com/Kunaltembhare003/BuzzTrack_API/blob/main/API_Documentation.md).
