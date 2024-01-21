@@ -1,30 +1,23 @@
 from flask import Flask, request, jsonify
 from marshmallow import ValidationError
 from schemas import FizzBuzzSchema
-#from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity
+from flask_limiter import Limiter
+from flask_limiter.util import get_remote_address
+
 
 app = Flask(__name__)
 fizz_buzz_schema = FizzBuzzSchema()
 # Store statistics
 request_stats = {}
-#app.config["JWT_SECRET_KEY"] = "kunal_learning"
-#jwt= JWTManager(app)
+limiter = Limiter(
+    get_remote_address,
+    app=app,
+    default_limits=["200 per day", "50 per hour"] 
+)
 
-'''@app.route('/login', methods=['POST'])
-def login():
-    username = request.json.get('username', None)
-    password = request.json.get('password', None)
-
-    # Validate the username and password (this is just an example, use a secure method)
-    if username == 'your_username' and password == 'your_password':
-        # Create an access token
-        access_token = create_access_token(identity=username)
-        return jsonify(access_token=access_token), 200
-    else:
-        return jsonify({"msg": "Invalid credentials"}), 401'''
 
 @app.route('/fizzbuzz', methods=['GET'])
-#@jwt_required()
+@limiter.limit("5 per minute")  # Adjust the limit
 def fizzbuzz():
     try:
         data = fizz_buzz_schema.load(request.args)
